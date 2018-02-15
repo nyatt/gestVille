@@ -16,7 +16,7 @@ public class Ville {
 	}
 	
 	//constructeur avec paramtres 
-	public Ville (String nomVille, int i, String nomPays, char categorie) {
+	public Ville (String nomVille, int i, String nomPays) {
 		System.out.println("Creeation dune Ville avec parametre");
 		this.setNomVille(nomVille);
 		this.setNomPays(nomPays);
@@ -27,16 +27,16 @@ public class Ville {
 	//determine la categorie de laville 
 	private void  typeCategorie(){
 	  int nbre []= {10,20,30,40,50};
-	  char categorie[] = {'A','B','C','D','E'};
+	  char categories[] = {'A','B','C','D','E'};
 	  int i = 0;
-	while (i<nbre.length && this.nbreHabitants<= categorie[i] )
+	while (i<nbre.length && this.nbreHabitants<= nbre[i] )
 		i++;
-		this.categorie = categorie[i];
+		this.categorie = categories[i];
 	}
 	
 	//description de la ville
 	public String describVille(){
-		return "\t"+ this.nomVille + " est une ville de "+ this.nomPays + " et comporte: "+this.nbreHabitants +" habitants "+ " Donc ca categorie est:" + this.getCategorie();
+		return "\t"+ this.nomVille + " est une ville de "+ this.nomPays + " et comporte: "+this.nbreHabitants +" habitants "+ " Donc ca categorie est:" + this.categorie;
 	}
 	
 	
