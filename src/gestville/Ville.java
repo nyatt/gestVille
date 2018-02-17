@@ -6,6 +6,12 @@ public class Ville {
 	private int nbreHabitants;
 	private char categorie;
 	
+	//variable publique qui comptera le nombre d'instance
+	public static int nbreInstances = 0;
+	
+	//varible privée qui comptera qussi le nombre d'instances
+	private static int nbreInstanceBis = 0;
+	
 	//constructeur
 	public Ville (){
 	     System.out.println("Creeation d'une Ville");
@@ -13,6 +19,8 @@ public class Ville {
 	     this.setNomPays("nomPays");
 	     this.setNbreHabitants(15);
 	     this.setCategorie(categorie);
+	     nbreHabitants++;
+	     nbreInstanceBis++;
 	}
 	
 	//constructeur avec paramtres 
@@ -22,6 +30,8 @@ public class Ville {
 		this.setNomPays(nomPays);
 		this.setNbreHabitants(i);
 		this.setCategorie(categorie);
+		nbreHabitants++;
+		nbreInstanceBis++;
 	}
 	
 	//determine la categorie de laville 
@@ -82,8 +92,23 @@ public class Ville {
 
 	public void setCategorie(char categorie) {
 		this.categorie = categorie;
+		this.typeCategorie();
 	}
+	public void  setNbreInstaces(int nbreInstances){
+		 Ville.nbreInstances = nbreInstances;
+	}
+	
+	public static int getNombreInstances(){
+		return nbreInstances;
+	}
+	
+	public static int getNbreInstancesBis(){
+		return nbreInstanceBis;
+	}
+	public void setNbreInstancesBis(int nbreInstancesBis){
+		Ville.nbreInstanceBis = nbreInstancesBis;
+	}
+	
 
-
-
+	
 }
